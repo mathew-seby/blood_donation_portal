@@ -6,1162 +6,444 @@
   <title>Abhayam — NSS BMC Blood Donation Cell</title>
   <link rel="stylesheet" href="style.css" />
 </head>
-<body style="margin: 0; padding: 0; background-color: #0a0f1e;">
+<body>
 
-  <header style="
-    background-color: #fe121e;
-    padding: 0 24px;
-    height: 80px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    z-index: 1000;
-    overflow: hidden;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.35);
-  ">
+  <!-- App bar -->
+  <header class="appbar">
+    <div class="appbar__spacer" aria-hidden="true"></div>
 
-    <img
-      src="ChatGPT Image Jun 10, 2026, 12_24_12 PM.png"
-      alt="NSS Logo"
-      style="height: 250px; width: 250px; object-fit: contain; flex-shrink: 0;"
-    />
-
-    <div style="text-align: center;">
-      <span style="
-        display: block;
-        font-family: Arial, sans-serif;
-        font-size: 26px;
-        font-weight: 700;
-        color: #ffffff;
-        letter-spacing: 2px;
-      ">Abhayam</span>
-      <span style="
-        display: block;
-        font-family: Arial, sans-serif;
-        font-size: 11px;
-        color: rgba(247, 247, 247, 0.72);
-        margin-top: 3px;
-        letter-spacing: 0.3px;
-      ">NSS Blood Donation Cell · BMC Thrikkakara</span>
+    <div class="appbar__brand">
+      <div class="appbar__logos">
+        <div class="appbar__logo-slot">
+          <img src="ChatGPT Image Jun 10, 2026, 12_24_12 PM.png" alt="NSS Logo" />
+        </div>
+        <div class="appbar__logo-slot">
+          <img src="hLogo.png" alt="Bharata Mata College Logo" />
+        </div>
+      </div>
     </div>
 
-    <img
-      src="hLogo.png"
-      alt="Bharata Mata College Logo"
-      style="height: 250px; width: 250px; object-fit: contain; flex-shrink: 0;"
-    />
-
+    <button class="appbar__menu-btn" id="menu-btn" aria-label="Open navigation menu" aria-expanded="false" aria-controls="nav-drawer">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
   </header>
-  <div style="height: 80px;"></div>
 
-  <header id="home" style="
-    position: relative;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    overflow: hidden;
-  ">
+  <!-- Navigation drawer -->
+  <div class="nav-drawer__overlay" id="nav-overlay"></div>
+  <nav class="nav-drawer" id="nav-drawer" aria-label="Main navigation">
+    <a class="nav-drawer__link" href="#aim">Our Aim</a>
+    <a class="nav-drawer__link" href="#donation">Web Donation Cell</a>
+    <a class="nav-drawer__link" href="#contact">Contact &amp; Support</a>
+  </nav>
 
-    <img
-      src="WhatsApp Image 2026-06-10 at 11.48.24 AM.jpeg"
-      alt=""
-      aria-hidden="true"
-      style="
-        position: absolute;
-        inset: 0;
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        object-position: center;
-        z-index: 0;
-      "
-    />
+  <div class="navbar-spacer"></div>
 
-    <div style="
-      position: absolute;
-      inset: 0;
-      background-color: rgba(21, 48, 141, 0.85);
-      z-index: 1;
-    "></div>
+  <!-- Hero -->
+  <header id="home" class="hero">
+    <img class="hero__bg" src="WhatsApp Image 2026-06-10 at 11.48.24 AM.jpeg" alt="" aria-hidden="true" />
+    <div class="hero__overlay"></div>
+    <img class="hero__watermark" src="Nss logo .png" alt="" aria-hidden="true" />
 
-    <img
-      src="Nss logo .png"
-      alt=""
-      aria-hidden="true"
-      style="
-        position: absolute;
-        inset: 0;
-        margin: auto;
-        width: 420px;
-        height: 420px;
-        object-fit: contain;
-        opacity: 0.06;
-        pointer-events: none;
-        z-index: 2;
-      "
-    />
+    <div class="hero__content">
+      <p class="hero__initiative">An Initiative of NSS Bharata Mata College (Autonomous), Thrikkakara</p>
 
-    <div style="
-      position: relative;
-      z-index: 10;
-      max-width: 860px;
-      margin: 0 auto;
-      padding: 100px 24px 40px;
-      text-align: center;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-    ">
-
-      <p style="
-        font-family: Arial, sans-serif;
-        font-size: 12px;
-        font-weight: 600;
-        color: rgba(255, 255, 255, 0.75);
-        letter-spacing: 4px;
-        text-transform: uppercase;
-        margin-bottom: 20px;
-      ">
-        Bharata Mata College &bull; NSS Unit
-      </p>
-
-      <h1 style="
-        font-family: Arial, sans-serif;
-        font-size: clamp(64px, 12vw, 110px);
-        font-weight: 900;
-        color: #ffffff;
-        letter-spacing: -1px;
-        line-height: 1;
-        margin-bottom: 16px;
-      ">
-        ABHAYAM
+      <h1 class="hero__logo">
+        <img src="abhayam.png" alt="Abhayam" />
       </h1>
 
-      <p style="
-        font-family: Georgia, serif;
-        font-size: clamp(16px, 3vw, 26px);
-        color: #fe121e;
-        font-style: italic;
-        margin-bottom: 40px;
-      ">
-        "Because Every Drop Matters"
-      </p>
+      <p class="hero__tagline">"Because Every Drop Matters"</p>
 
-      <div style="
-        display: flex;
-        flex-wrap: wrap;
-        gap: 16px;
-        justify-content: center;
-        margin-bottom: 64px;
-      ">
-        <a href="#donation" style="
-          background-color: #fe121e;
-          color: #ffffff;
-          padding: 14px 32px;
-          border-radius: 12px;
-          font-family: Arial, sans-serif;
-          font-size: 16px;
-          font-weight: 600;
-          text-decoration: none;
-        ">🩸 Register as Donor</a>
-
-        <a href="#donation" style="
-          background-color: rgba(255,255,255,0.12);
-          color: #ffffff;
-          border: 1px solid rgba(255,255,255,0.3);
-          padding: 14px 32px;
-          border-radius: 12px;
-          font-family: Arial, sans-serif;
-          font-size: 16px;
-          font-weight: 600;
-          text-decoration: none;
-        ">🆘 Request Blood</a>
+      <div class="hero__actions">
+        <a href="#donation" class="btn btn--primary">🩸 Register as Donor</a>
+        <a href="#donation" class="btn btn--ghost">🆘 Request Blood</a>
       </div>
-
     </div>
-    <div style="
-      position: relative;
-      z-index: 10;
-      width: 100%;
-      border-top: 1px solid rgba(255,255,255,0.15);
-    ">
-      <div style="
-        max-width: 860px;
-        margin: 0 auto;
-        padding: 28px 24px;
-        display: flex;
-        flex-wrap: wrap;
-        align-items: center;
-        gap: 24px;
-        justify-content: space-between;
-      ">
 
-        <div style="flex: 1; min-width: 240px;">
-          <h2 style="
-            font-family: Arial, sans-serif;
-            font-size: 17px;
-            font-weight: 700;
-            color: #ffffff;
-            margin-bottom: 6px;
-            letter-spacing: 0.5px;
-          ">NSS &amp; Blood Donation Cell</h2>
-          <p style="
-            font-family: Arial, sans-serif;
-            font-size: 13.5px;
-            color: rgba(255,255,255,0.72);
-            line-height: 1.65;
-            margin: 0;
-          ">
+    <div class="hero__stats-bar">
+      <div class="hero__stats-inner">
+        <div class="hero__stats-text">
+          <h2>NSS &amp; Blood Donation Cell</h2>
+          <p>
             The NSS Blood Donation Cell at Bharata Mata College is committed to building
             a voluntary donor pool across our community. Through <em>Abhayam</em>, we bridge
             the gap between willing donors and patients in urgent need — one drop at a time.
           </p>
         </div>
-
-        <div style="display: flex; gap: 16px; flex-shrink: 0;">
-
-          <div style="
-            text-align: center;
-            padding: 14px 20px;
-            background: rgba(255,255,255,0.10);
-            border: 1px solid rgba(255,255,255,0.20);
-            border-radius: 12px;
-          ">
-            <div style="
-              font-family: Arial, sans-serif;
-              font-size: 26px;
-              font-weight: 900;
-              color: #fe121e;
-            ">4827</div>
-            <div style="
-              font-family: Arial, sans-serif;
-              font-size: 10px;
-              color: rgba(255,255,255,0.6);
-              text-transform: uppercase;
-              letter-spacing: 2px;
-              margin-top: 2px;
-            ">Donors</div>
+        <div class="hero__stats-cards">
+          <div class="stat-card">
+            <div class="stat-card__value">4827</div>
+            <div class="stat-card__label">Donors</div>
           </div>
-
-          <div style="
-            text-align: center;
-            padding: 14px 20px;
-            background: rgba(255,255,255,0.10);
-            border: 1px solid rgba(255,255,255,0.20);
-            border-radius: 12px;
-          ">
-            <div style="
-              font-family: Arial, sans-serif;
-              font-size: 26px;
-              font-weight: 900;
-              color: #fe121e;
-            ">1243</div>
-            <div style="
-              font-family: Arial, sans-serif;
-              font-size: 10px;
-              color: rgba(255,255,255,0.6);
-              text-transform: uppercase;
-              letter-spacing: 2px;
-              margin-top: 2px;
-            ">Lives Saved</div>
+          <div class="stat-card">
+            <div class="stat-card__value">1243</div>
+            <div class="stat-card__label">Lives Saved</div>
           </div>
-
         </div>
-
       </div>
     </div>
-    <div style="
-      position: absolute;
-      bottom: 16px;
-      left: 50%;
-      transform: translateX(-50%);
-      z-index: 10;
-      animation: bounce 1.5s infinite;
-    " aria-hidden="true">
-      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24" stroke="rgba(255,255,255,0.5)" stroke-width="2">
+
+    <button class="scroll-down-btn" data-target="#aim" aria-label="Scroll to next section" title="Next section">
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
         <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
       </svg>
-    </div>
-
-    <style>
-      @keyframes bounce {
-        0%, 100% { transform: translateX(-50%) translateY(0); }
-        50%       { transform: translateX(-50%) translateY(6px); }
-      }
-    </style>
-
+    </button>
   </header>
-  <section id="aim" style="
-    padding: 80px 24px;
-    background-color: #0a0f1e;
-  ">
-    <div style="max-width: 860px; margin: 0 auto;">
 
-      <div style="text-align: center; margin-bottom: 56px;">
-
-        <span style="
-          display: inline-block;
-          font-family: Arial, sans-serif;
-          font-size: 11px;
-          font-weight: 600;
-          color: rgba(255,255,255,0.6);
-          letter-spacing: 4px;
-          text-transform: uppercase;
-          margin-bottom: 14px;
-        ">Our Purpose</span>
-
-        <h2 style="
-          font-family: Arial, sans-serif;
-          font-size: clamp(32px, 6vw, 48px);
-          font-weight: 900;
-          color: #ffffff;
-          margin-bottom: 16px;
-          line-height: 1.1;
-        ">Our Aim</h2>
-
-        <p style="
-          font-family: Arial, sans-serif;
-          font-size: 16px;
-          color: rgba(255,255,255,0.55);
-          max-width: 560px;
-          margin: 0 auto 20px;
-          line-height: 1.7;
-        ">
+  <!-- Aim -->
+  <section id="aim" class="section--aim">
+    <div class="section-wrap">
+      <div class="section-header">
+        <span class="section-eyebrow">Our Purpose</span>
+        <h2 class="section-title">Our Aim</h2>
+        <p class="section-desc">
           Abhayam is more than a portal — it is a movement to make voluntary blood donation
           accessible, dignified, and life-saving for everyone in our community.
         </p>
-
-        <div style="
-          width: 64px;
-          height: 3px;
-          background: linear-gradient(to right, #fe121e, #15308d);
-          margin: 0 auto;
-          border-radius: 2px;
-        "></div>
-
+        <div class="section-divider"></div>
       </div>
-      <div style="
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-        gap: 40px;
-        margin-bottom: 56px;
-      ">
 
-        <div>
-          <div style="font-size: 36px; margin-bottom: 12px;">🎯</div>
-          <h3 style="
-            font-family: Arial, sans-serif;
-            font-size: 17px;
-            font-weight: 700;
-            color: #ffffff;
-            margin-bottom: 10px;
-          ">Our Mission</h3>
-          <p style="
-            font-family: Arial, sans-serif;
-            font-size: 14px;
-            color: rgba(255,255,255,0.55);
-            line-height: 1.7;
-            margin: 0;
-          ">
+      <div class="aim-grid">
+        <div class="aim-card">
+          <div class="aim-card__icon">🎯</div>
+          <h3>Our Mission</h3>
+          <p>
             To establish a robust, technology-enabled voluntary blood donor network within
             Bharata Mata College and its surrounding community — ensuring that no patient
             suffers due to unavailability of blood.
           </p>
         </div>
-
-        <div>
-          <div style="font-size: 36px; margin-bottom: 12px;">🌟</div>
-          <h3 style="
-            font-family: Arial, sans-serif;
-            font-size: 17px;
-            font-weight: 700;
-            color: #ffffff;
-            margin-bottom: 10px;
-          ">Our Vision</h3>
-          <p style="
-            font-family: Arial, sans-serif;
-            font-size: 14px;
-            color: rgba(255,255,255,0.55);
-            line-height: 1.7;
-            margin: 0;
-          ">
+        <div class="aim-card">
+          <div class="aim-card__icon">🌟</div>
+          <h3>Our Vision</h3>
+          <p>
             A compassionate campus community where every student, faculty member, and
             staff is empowered to save lives through voluntary blood donation — creating
             a culture of care that extends beyond the college gates.
           </p>
         </div>
-
-        <div>
-          <div style="font-size: 36px; margin-bottom: 12px;">💚</div>
-          <h3 style="
-            font-family: Arial, sans-serif;
-            font-size: 17px;
-            font-weight: 700;
-            color: #ffffff;
-            margin-bottom: 10px;
-          ">Our Values</h3>
-          <p style="
-            font-family: Arial, sans-serif;
-            font-size: 14px;
-            color: rgba(255,255,255,0.55);
-            line-height: 1.7;
-            margin: 0;
-          ">
+        <div class="aim-card">
+          <div class="aim-card__icon">💚</div>
+          <h3>Our Values</h3>
+          <p>
             Compassion, transparency, and swift action. We believe every human life is
             sacred. Our NSS volunteers work tirelessly to coordinate donations with zero
             barriers of caste, creed, or socioeconomic status.
           </p>
         </div>
-
       </div>
-      <div style="
-        border-top: 1px solid rgba(254, 18, 30, 0.25);
-        padding-top: 40px;
-      ">
 
-        <h3 style="
-          font-family: Arial, sans-serif;
-          font-size: 16px;
-          font-weight: 700;
-          color: #ffffff;
-          text-align: center;
-          margin-bottom: 32px;
-          letter-spacing: 0.5px;
-        ">Why Blood Donation Matters</h3>
-
-        <div style="
-          display: grid;
-          grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
-          gap: 24px;
-          text-align: center;
-        ">
-
-          <div>
-            <div style="font-family: Arial, sans-serif; font-size: 28px; font-weight: 900; color: #fe121e; margin-bottom: 6px;">Every 2s</div>
-            <div style="font-family: Arial, sans-serif; font-size: 12px; color: rgba(255,255,255,0.5);">someone needs blood in India</div>
+      <div class="aim-facts">
+        <h3>Why Blood Donation Matters</h3>
+        <div class="facts-grid">
+          <div class="fact-box">
+            <div class="fact-box__value">Every 2s</div>
+            <div class="fact-box__label">someone needs blood in India</div>
           </div>
-
-          <div>
-            <div style="font-family: Arial, sans-serif; font-size: 28px; font-weight: 900; color: #fe121e; margin-bottom: 6px;">1 Unit</div>
-            <div style="font-family: Arial, sans-serif; font-size: 12px; color: rgba(255,255,255,0.5);">of blood can save up to 3 lives</div>
+          <div class="fact-box">
+            <div class="fact-box__value">1 Unit</div>
+            <div class="fact-box__label">of blood can save up to 3 lives</div>
           </div>
-
-          <div>
-            <div style="font-family: Arial, sans-serif; font-size: 28px; font-weight: 900; color: #fe121e; margin-bottom: 6px;">56 Days</div>
-            <div style="font-family: Arial, sans-serif; font-size: 12px; color: rgba(255,255,255,0.5);">is all it takes to donate again</div>
+          <div class="fact-box">
+            <div class="fact-box__value">56 Days</div>
+            <div class="fact-box__label">is all it takes to donate again</div>
           </div>
-
-          <div>
-            <div style="font-family: Arial, sans-serif; font-size: 28px; font-weight: 900; color: #fe121e; margin-bottom: 6px;">0 Cost</div>
-            <div style="font-family: Arial, sans-serif; font-size: 12px; color: rgba(255,255,255,0.5);">to you — priceless to the recipient</div>
+          <div class="fact-box">
+            <div class="fact-box__value">0 Cost</div>
+            <div class="fact-box__label">to you — priceless to the recipient</div>
           </div>
-
         </div>
       </div>
-      </div>
+
+      <button class="scroll-down-btn" data-target="#donation" aria-label="Scroll to next section" title="Next section">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+        </svg>
+      </button>
+    </div>
   </section>
-  <section id="donation" style="
-    padding: 80px 24px;
-    background-color: #15308d;
-  ">
-    <div style="max-width: 680px; margin: 0 auto;">
 
-      <div style="text-align: center; margin-bottom: 48px;">
-
-        <span style="
-          display: inline-block;
-          font-family: Arial, sans-serif;
-          font-size: 11px;
-          font-weight: 600;
-          color: rgba(255,255,255,0.6);
-          letter-spacing: 4px;
-          text-transform: uppercase;
-          margin-bottom: 14px;
-        ">Take Action</span>
-
-        <h2 style="
-          font-family: Arial, sans-serif;
-          font-size: clamp(32px, 6vw, 48px);
-          font-weight: 900;
-          color: #ffffff;
-          margin-bottom: 14px;
-          line-height: 1.1;
-        ">Web Donation Cell</h2>
-
-        <p style="
-          font-family: Arial, sans-serif;
-          font-size: 15px;
-          color: rgba(255,255,255,0.65);
-          max-width: 480px;
-          margin: 0 auto 20px;
-          line-height: 1.7;
-        ">
+  <!-- Donation Cell -->
+  <section id="donation" class="section--donation">
+    <div class="section-wrap section-wrap--narrow">
+      <div class="section-header section-header--sm">
+        <span class="section-eyebrow">Take Action</span>
+        <h2 class="section-title">Web Donation Cell</h2>
+        <p class="section-desc section-desc--sm">
           Register as a voluntary donor or submit an urgent blood request below.
           Our team is notified immediately on every submission.
         </p>
-
-        <div style="
-          width: 64px;
-          height: 3px;
-          background: linear-gradient(to right, #fe121e, rgba(255,255,255,0.4));
-          margin: 0 auto;
-          border-radius: 2px;
-        "></div>
-
+        <div class="section-divider section-divider--light"></div>
       </div>
-      <div style="
-        display: flex;
-        background: rgba(0,0,0,0.25);
-        border-radius: 14px;
-        padding: 6px;
-        gap: 6px;
-        margin-bottom: 32px;
-      " role="tablist">
 
-        <button
-          id="tab-btn-donor"
-          onclick="showTab('donor-tab', this)"
-          role="tab"
-          aria-selected="true"
-          aria-controls="donor-tab"
-          style="
-            flex: 1;
-            padding: 12px 16px;
-            border: none;
-            border-radius: 10px;
-            font-family: Arial, sans-serif;
-            font-size: 14px;
-            font-weight: 600;
-            cursor: pointer;
-            background: #fe121e;
-            color: #ffffff;
-            transition: all 0.2s;
-          "
-        >🧑‍⚕️ Donor Registration</button>
-
-        <button
-          id="tab-btn-request"
-          onclick="showTab('request-tab', this)"
-          role="tab"
-          aria-selected="false"
-          aria-controls="request-tab"
-          style="
-            flex: 1;
-            padding: 12px 16px;
-            border: none;
-            border-radius: 10px;
-            font-family: Arial, sans-serif;
-            font-size: 14px;
-            font-weight: 600;
-            cursor: pointer;
-            background: transparent;
-            color: rgba(255,255,255,0.7);
-            transition: all 0.2s;
-          "
-        >🆘 Blood Request</button>
-
-      </div>
-      <div id="donor-tab" role="tabpanel">
-
-        <div style="
-          display: flex;
-          gap: 12px;
-          align-items: flex-start;
-          background: rgba(255, 200, 0, 0.10);
-          border: 1px solid rgba(255, 200, 0, 0.30);
-          border-radius: 10px;
-          padding: 14px 16px;
-          margin-bottom: 24px;
-        " role="note">
-          <span style="font-size: 20px; flex-shrink: 0;">⚠️</span>
-          <p style="
-            font-family: Arial, sans-serif;
-            font-size: 13px;
-            color: rgba(255,240,180,0.85);
-            margin: 0;
-            line-height: 1.6;
-          ">
-            <strong style="color: #ffe066;">Eligibility:</strong>
-            Age 18–65 · Weight ≥ 45 kg · Good health · 56+ days since last donation.
-          </p>
+      <div class="form-card-wrap">
+        <div class="form-card__watermark" aria-hidden="true">
+          <img src="Nss logo .png" alt="" />
+        </div>
+        <div class="form-card">
+          <div class="tab-list" role="tablist">
+          <button id="tab-btn-donor" class="tab-btn is-active" role="tab" aria-selected="true" aria-controls="donor-tab" data-tab="donor-tab">🧑‍⚕️ Donor Registration</button>
+          <button id="tab-btn-request" class="tab-btn" role="tab" aria-selected="false" aria-controls="request-tab" data-tab="request-tab">🆘 Blood Request</button>
         </div>
 
-        <form id="donor-form" novalidate>
-
-          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 16px;">
-
-            <div style="display: flex; flex-direction: column; gap: 6px;">
-              <label for="donor-name" style="
-                font-family: Arial, sans-serif;
-                font-size: 11px;
-                font-weight: 700;
-                color: rgba(255,255,255,0.6);
-                text-transform: uppercase;
-                letter-spacing: 1.5px;
-              ">Full Name <span style="color: #fe121e;">*</span></label>
-              <input
-                type="text" id="donor-name" name="name"
-                placeholder="e.g. Rahul Sharma"
-                maxlength="100" autocomplete="name" required
-                style="
-                  font-family: Arial, sans-serif;
-                  font-size: 14px;
-                  color: #ffffff;
-                  background: rgba(255,255,255,0.10);
-                  border: 1px solid rgba(255,255,255,0.20);
-                  border-radius: 8px;
-                  padding: 10px 14px;
-                  outline: none;
-                  width: 100%;
-                  box-sizing: border-box;
-                "
-              />
-            </div>
-
-            <div style="display: flex; flex-direction: column; gap: 6px;">
-              <label for="donor-phone" style="
-                font-family: Arial, sans-serif;
-                font-size: 11px;
-                font-weight: 700;
-                color: rgba(255,255,255,0.6);
-                text-transform: uppercase;
-                letter-spacing: 1.5px;
-              ">Phone No <span style="color: #fe121e;">*</span></label>
-              <input
-                type="tel" id="donor-phone" name="phone"
-                placeholder="e.g. 9876543210"
-                maxlength="10" pattern="[6-9][0-9]{9}" autocomplete="tel" required
-                style="
-                  font-family: Arial, sans-serif;
-                  font-size: 14px;
-                  color: #ffffff;
-                  background: rgba(255,255,255,0.10);
-                  border: 1px solid rgba(255,255,255,0.20);
-                  border-radius: 8px;
-                  padding: 10px 14px;
-                  outline: none;
-                  width: 100%;
-                  box-sizing: border-box;
-                "
-              />
-            </div>
-
+        <!-- Donor tab -->
+        <div id="donor-tab" class="tab-panel is-active" role="tabpanel">
+          <div class="alert-box alert-box--warning" role="note">
+            <span class="alert-box__icon">⚠️</span>
+            <p>
+              <strong>Eligibility:</strong>
+              Age 18–65 · Weight ≥ 45 kg · Good health · 56+ days since last donation.
+            </p>
           </div>
 
-          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 16px;">
-
-            <div style="display: flex; flex-direction: column; gap: 6px;">
-              <label for="donor-age" style="
-                font-family: Arial, sans-serif;
-                font-size: 11px;
-                font-weight: 700;
-                color: rgba(255,255,255,0.6);
-                text-transform: uppercase;
-                letter-spacing: 1.5px;
-              ">Age <span style="color: #fe121e;">*</span></label>
-              <input
-                type="number" id="donor-age" name="age"
-                placeholder="18 – 65" min="18" max="65" required
-                style="
-                  font-family: Arial, sans-serif;
-                  font-size: 14px;
-                  color: #ffffff;
-                  background: rgba(255,255,255,0.10);
-                  border: 1px solid rgba(255,255,255,0.20);
-                  border-radius: 8px;
-                  padding: 10px 14px;
-                  outline: none;
-                  width: 100%;
-                  box-sizing: border-box;
-                "
-              />
+          <form id="donor-form" novalidate>
+            <div class="form-grid">
+              <div class="form-field">
+                <label for="donor-name">Full Name <span class="required">*</span></label>
+                <input type="text" id="donor-name" name="name" placeholder="e.g. Rahul Sharma" maxlength="100" autocomplete="name" required />
+              </div>
+              <div class="form-field">
+                <label for="donor-phone">Phone No <span class="required">*</span></label>
+                <input type="tel" id="donor-phone" name="phone" placeholder="e.g. 9876543210" maxlength="10" pattern="[6-9][0-9]{9}" autocomplete="tel" required />
+              </div>
             </div>
 
-            <div style="display: flex; flex-direction: column; gap: 6px;">
-              <label for="donor-gender" style="
-                font-family: Arial, sans-serif;
-                font-size: 11px;
-                font-weight: 700;
-                color: rgba(255,255,255,0.6);
-                text-transform: uppercase;
-                letter-spacing: 1.5px;
-              ">Gender <span style="color: #fe121e;">*</span></label>
-              <select id="donor-gender" name="gender" required style="
-                font-family: Arial, sans-serif;
-                font-size: 14px;
-                color: #ffffff;
-                background: rgba(255,255,255,0.10);
-                border: 1px solid rgba(255,255,255,0.20);
-                border-radius: 8px;
-                padding: 10px 14px;
-                outline: none;
-                width: 100%;
-                box-sizing: border-box;
-                appearance: none;
-              ">
-                <option value="" disabled selected style="background:#15308d;">Select gender</option>
-                <option value="Male" style="background:#15308d;">Male</option>
-                <option value="Female" style="background:#15308d;">Female</option>
-                <option value="Other" style="background:#15308d;">Other</option>
-                <option value="Prefer not to say" style="background:#15308d;">Prefer not to say</option>
+            <div class="form-grid">
+              <div class="form-field">
+                <label for="donor-age">Age <span class="required">*</span></label>
+                <input type="number" id="donor-age" name="age" placeholder="18 – 65" min="18" max="65" required />
+              </div>
+              <div class="form-field">
+                <label for="donor-gender">Gender <span class="required">*</span></label>
+                <select id="donor-gender" name="gender" required>
+                  <option value="" disabled selected>Select gender</option>
+                  <option value="Male">Male</option>
+                  <option value="Female">Female</option>
+                  <option value="Other">Other</option>
+                  <option value="Prefer not to say">Prefer not to say</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="form-grid">
+              <div class="form-field">
+                <label for="donor-blood-group">Blood Group <span class="required">*</span></label>
+                <select id="donor-blood-group" name="bloodGroup" required>
+                  <option value="" disabled selected>Select blood group</option>
+                  <option value="A+">A+ (A Positive)</option>
+                  <option value="A-">A− (A Negative)</option>
+                  <option value="B+">B+ (B Positive)</option>
+                  <option value="B-">B− (B Negative)</option>
+                  <option value="AB+">AB+ (AB Positive)</option>
+                  <option value="AB-">AB− (AB Negative)</option>
+                  <option value="O+">O+ (O Positive)</option>
+                  <option value="O-">O− (O Negative)</option>
+                </select>
+              </div>
+              <div class="form-field">
+                <label for="donor-address">Address <span class="required">*</span></label>
+                <textarea id="donor-address" name="address" placeholder="Area / locality, District, Kerala" rows="3" maxlength="300" required></textarea>
+              </div>
+            </div>
+
+            <label class="checkbox-field" for="donor-eligible">
+              <input type="checkbox" id="donor-eligible" name="eligible" checked />
+              <span>
+                <strong>I am currently eligible to donate blood</strong>
+                <small>Uncheck if you have donated recently, are on medication, or are unwell.</small>
+              </span>
+            </label>
+
+            <button type="submit" id="donor-submit-btn" class="btn btn--primary btn--full">🩸 Register as Donor</button>
+            <div id="donor-status" class="form-status" role="alert" aria-live="polite"></div>
+            <p class="form-note">Your data is stored securely and used only for blood donation coordination.</p>
+          </form>
+        </div>
+
+        <!-- Request tab -->
+        <div id="request-tab" class="tab-panel" role="tabpanel">
+          <div class="alert-box alert-box--urgent" role="note">
+            <span class="alert-box__icon">⚡</span>
+            <p>
+              <strong>Urgent?</strong>
+              The admin is instantly notified via email after submission.
+              For life-threatening emergencies, call <strong>1910</strong> immediately.
+            </p>
+          </div>
+
+          <form id="request-form" novalidate>
+            <div class="form-field form-field--spaced">
+              <label for="request-blood-group">Required Blood Group <span class="required">*</span></label>
+              <select id="request-blood-group" name="bloodGroup" required>
+                <option value="" disabled selected>Select required blood group</option>
+                <option value="A+">A+ (A Positive)</option>
+                <option value="A-">A− (A Negative)</option>
+                <option value="B+">B+ (B Positive)</option>
+                <option value="B-">B− (B Negative)</option>
+                <option value="AB+">AB+ (AB Positive)</option>
+                <option value="AB-">AB− (AB Negative)</option>
+                <option value="O+">O+ (O Positive)</option>
+                <option value="O-">O− (O Negative)</option>
               </select>
+              <div class="blood-group-chips">
+                <span class="blood-chip">A+</span>
+                <span class="blood-chip">A−</span>
+                <span class="blood-chip">B+</span>
+                <span class="blood-chip">B−</span>
+                <span class="blood-chip">AB+</span>
+                <span class="blood-chip">AB−</span>
+                <span class="blood-chip">O+</span>
+                <span class="blood-chip">O−</span>
+              </div>
             </div>
 
-          </div>
-
-          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 16px;">
-
-            <div style="display: flex; flex-direction: column; gap: 6px;">
-              <label for="donor-blood-group" style="
-                font-family: Arial, sans-serif;
-                font-size: 11px;
-                font-weight: 700;
-                color: rgba(255,255,255,0.6);
-                text-transform: uppercase;
-                letter-spacing: 1.5px;
-              ">Blood Group <span style="color: #fe121e;">*</span></label>
-              <select id="donor-blood-group" name="bloodGroup" required style="
-                font-family: Arial, sans-serif;
-                font-size: 14px;
-                color: #ffffff;
-                background: rgba(255,255,255,0.10);
-                border: 1px solid rgba(255,255,255,0.20);
-                border-radius: 8px;
-                padding: 10px 14px;
-                outline: none;
-                width: 100%;
-                box-sizing: border-box;
-                appearance: none;
-              ">
-                <option value="" disabled selected style="background:#15308d;">Select blood group</option>
-                <option value="A+" style="background:#15308d;">A+ (A Positive)</option>
-                <option value="A-" style="background:#15308d;">A− (A Negative)</option>
-                <option value="B+" style="background:#15308d;">B+ (B Positive)</option>
-                <option value="B-" style="background:#15308d;">B− (B Negative)</option>
-                <option value="AB+" style="background:#15308d;">AB+ (AB Positive)</option>
-                <option value="AB-" style="background:#15308d;">AB− (AB Negative)</option>
-                <option value="O+" style="background:#15308d;">O+ (O Positive)</option>
-                <option value="O-" style="background:#15308d;">O− (O Negative)</option>
-              </select>
+            <div class="form-grid form-grid--spaced">
+              <div class="form-field">
+                <label for="request-contact-name">Contact Person Name <span class="required">*</span></label>
+                <input type="text" id="request-contact-name" name="contactName" placeholder="e.g. Priya Verma" maxlength="100" autocomplete="name" required />
+              </div>
+              <div class="form-field">
+                <label for="request-contact-phone">Contact Phone No <span class="required">*</span></label>
+                <input type="tel" id="request-contact-phone" name="contactPhone" placeholder="e.g. 9876543210" maxlength="10" pattern="[6-9][0-9]{9}" autocomplete="tel" required />
+              </div>
             </div>
 
-            <div style="display: flex; flex-direction: column; gap: 6px;">
-              <label for="donor-address" style="
-                font-family: Arial, sans-serif;
-                font-size: 11px;
-                font-weight: 700;
-                color: rgba(255,255,255,0.6);
-                text-transform: uppercase;
-                letter-spacing: 1.5px;
-              ">Address <span style="color: #fe121e;">*</span></label>
-              <textarea
-                id="donor-address" name="address"
-                placeholder="Area / locality, District, Kerala"
-                rows="3" maxlength="300" required
-                style="
-                  font-family: Arial, sans-serif;
-                  font-size: 14px;
-                  color: #ffffff;
-                  background: rgba(255,255,255,0.10);
-                  border: 1px solid rgba(255,255,255,0.20);
-                  border-radius: 8px;
-                  padding: 10px 14px;
-                  outline: none;
-                  width: 100%;
-                  box-sizing: border-box;
-                  resize: vertical;
-                "
-              ></textarea>
-            </div>
-
-          </div>
-
-          <label for="donor-eligible" style="
-            display: flex;
-            align-items: flex-start;
-            gap: 12px;
-            background: rgba(255,255,255,0.07);
-            border: 1px solid rgba(255,255,255,0.15);
-            border-radius: 10px;
-            padding: 14px 16px;
-            cursor: pointer;
-            margin-bottom: 24px;
-          ">
-            <input
-              type="checkbox" id="donor-eligible" name="eligible" checked
-              style="margin-top: 2px; accent-color: #fe121e; width: 16px; height: 16px; flex-shrink: 0;"
-            />
-            <span>
-              <strong style="display: block; font-family: Arial, sans-serif; font-size: 13.5px; color: #ffffff; margin-bottom: 3px;">
-                I am currently eligible to donate blood
-              </strong>
-              <small style="font-family: Arial, sans-serif; font-size: 12px; color: rgba(255,255,255,0.5);">
-                Uncheck if you have donated recently, are on medication, or are unwell.
-              </small>
-            </span>
-          </label>
-
-          <button type="submit" id="donor-submit-btn" style="
-            width: 100%;
-            padding: 14px;
-            background: #fe121e;
-            color: #ffffff;
-            border: none;
-            border-radius: 10px;
-            font-family: Arial, sans-serif;
-            font-size: 15px;
-            font-weight: 700;
-            cursor: pointer;
-            letter-spacing: 0.5px;
-          ">🩸 Register as Donor</button>
-
-          <div id="donor-status" role="alert" aria-live="polite" style="margin-top: 14px;"></div>
-
-          <p style="
-            text-align: center;
-            font-family: Arial, sans-serif;
-            font-size: 12px;
-            color: rgba(255,255,255,0.4);
-            margin-top: 14px;
-          ">Your data is stored securely and used only for blood donation coordination.</p>
-
-        </form>
+            <button type="submit" id="request-submit-btn" class="btn btn--primary btn--full">🆘 Submit Urgent Request</button>
+            <div id="request-status" class="form-status" role="alert" aria-live="polite"></div>
+            <p class="form-note">Typical response time: <strong>15–30 minutes</strong>. Emergency: call <span class="emergency"><strong>1910</strong></span>.</p>
+          </form>
         </div>
-      <div id="request-tab" role="tabpanel" style="display: none;">
-
-        <div style="
-          display: flex;
-          gap: 12px;
-          align-items: flex-start;
-          background: rgba(254, 18, 30, 0.12);
-          border: 1px solid rgba(254, 18, 30, 0.35);
-          border-radius: 10px;
-          padding: 14px 16px;
-          margin-bottom: 24px;
-        " role="note">
-          <span style="font-size: 20px; flex-shrink: 0;">⚡</span>
-          <p style="
-            font-family: Arial, sans-serif;
-            font-size: 13px;
-            color: rgba(255,200,200,0.85);
-            margin: 0;
-            line-height: 1.6;
-          ">
-            <strong style="color: #ff6b6b;">Urgent?</strong>
-            The admin is instantly notified via email after submission.
-            For life-threatening emergencies, call <strong>1910</strong> immediately.
-          </p>
-        </div>
-
-        <form id="request-form" novalidate>
-
-          <div style="display: flex; flex-direction: column; gap: 6px; margin-bottom: 16px;">
-            <label for="request-blood-group" style="
-              font-family: Arial, sans-serif;
-              font-size: 11px;
-              font-weight: 700;
-              color: rgba(255,255,255,0.6);
-              text-transform: uppercase;
-              letter-spacing: 1.5px;
-            ">Required Blood Group <span style="color: #fe121e;">*</span></label>
-            <select id="request-blood-group" name="bloodGroup" required style="
-              font-family: Arial, sans-serif;
-              font-size: 14px;
-              color: #ffffff;
-              background: rgba(255,255,255,0.10);
-              border: 1px solid rgba(255,255,255,0.20);
-              border-radius: 8px;
-              padding: 10px 14px;
-              outline: none;
-              width: 100%;
-              box-sizing: border-box;
-              appearance: none;
-            ">
-              <option value="" disabled selected style="background:#15308d;">Select required blood group</option>
-              <option value="A+" style="background:#15308d;">A+ (A Positive)</option>
-              <option value="A-" style="background:#15308d;">A− (A Negative)</option>
-              <option value="B+" style="background:#15308d;">B+ (B Positive)</option>
-              <option value="B-" style="background:#15308d;">B− (B Negative)</option>
-              <option value="AB+" style="background:#15308d;">AB+ (AB Positive)</option>
-              <option value="AB-" style="background:#15308d;">AB− (AB Negative)</option>
-              <option value="O+" style="background:#15308d;">O+ (O Positive)</option>
-              <option value="O-" style="background:#15308d;">O− (O Negative)</option>
-            </select>
-
-            <div style="
-              display: grid;
-              grid-template-columns: repeat(8, 1fr);
-              gap: 6px;
-              margin-top: 8px;
-            ">
-              <div style="text-align:center; padding: 5px 4px; background: rgba(254,18,30,0.15); border: 1px solid rgba(254,18,30,0.30); border-radius: 6px; font-family: Arial, sans-serif; font-size: 11px; font-weight: 700; color: rgba(255,255,255,0.7);">A+</div>
-              <div style="text-align:center; padding: 5px 4px; background: rgba(254,18,30,0.15); border: 1px solid rgba(254,18,30,0.30); border-radius: 6px; font-family: Arial, sans-serif; font-size: 11px; font-weight: 700; color: rgba(255,255,255,0.7);">A−</div>
-              <div style="text-align:center; padding: 5px 4px; background: rgba(254,18,30,0.15); border: 1px solid rgba(254,18,30,0.30); border-radius: 6px; font-family: Arial, sans-serif; font-size: 11px; font-weight: 700; color: rgba(255,255,255,0.7);">B+</div>
-              <div style="text-align:center; padding: 5px 4px; background: rgba(254,18,30,0.15); border: 1px solid rgba(254,18,30,0.30); border-radius: 6px; font-family: Arial, sans-serif; font-size: 11px; font-weight: 700; color: rgba(255,255,255,0.7);">B−</div>
-              <div style="text-align:center; padding: 5px 4px; background: rgba(254,18,30,0.15); border: 1px solid rgba(254,18,30,0.30); border-radius: 6px; font-family: Arial, sans-serif; font-size: 11px; font-weight: 700; color: rgba(255,255,255,0.7);">AB+</div>
-              <div style="text-align:center; padding: 5px 4px; background: rgba(254,18,30,0.15); border: 1px solid rgba(254,18,30,0.30); border-radius: 6px; font-family: Arial, sans-serif; font-size: 11px; font-weight: 700; color: rgba(255,255,255,0.7);">AB−</div>
-              <div style="text-align:center; padding: 5px 4px; background: rgba(254,18,30,0.15); border: 1px solid rgba(254,18,30,0.30); border-radius: 6px; font-family: Arial, sans-serif; font-size: 11px; font-weight: 700; color: rgba(255,255,255,0.7);">O+</div>
-              <div style="text-align:center; padding: 5px 4px; background: rgba(254,18,30,0.15); border: 1px solid rgba(254,18,30,0.30); border-radius: 6px; font-family: Arial, sans-serif; font-size: 11px; font-weight: 700; color: rgba(255,255,255,0.7);">O−</div>
-            </div>
-          </div>
-
-          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 24px;">
-
-            <div style="display: flex; flex-direction: column; gap: 6px;">
-              <label for="request-contact-name" style="
-                font-family: Arial, sans-serif;
-                font-size: 11px;
-                font-weight: 700;
-                color: rgba(255,255,255,0.6);
-                text-transform: uppercase;
-                letter-spacing: 1.5px;
-              ">Contact Person Name <span style="color: #fe121e;">*</span></label>
-              <input
-                type="text" id="request-contact-name" name="contactName"
-                placeholder="e.g. Priya Verma"
-                maxlength="100" autocomplete="name" required
-                style="
-                  font-family: Arial, sans-serif;
-                  font-size: 14px;
-                  color: #ffffff;
-                  background: rgba(255,255,255,0.10);
-                  border: 1px solid rgba(255,255,255,0.20);
-                  border-radius: 8px;
-                  padding: 10px 14px;
-                  outline: none;
-                  width: 100%;
-                  box-sizing: border-box;
-                "
-              />
-            </div>
-
-            <div style="display: flex; flex-direction: column; gap: 6px;">
-              <label for="request-contact-phone" style="
-                font-family: Arial, sans-serif;
-                font-size: 11px;
-                font-weight: 700;
-                color: rgba(255,255,255,0.6);
-                text-transform: uppercase;
-                letter-spacing: 1.5px;
-              ">Contact Phone No <span style="color: #fe121e;">*</span></label>
-              <input
-                type="tel" id="request-contact-phone" name="contactPhone"
-                placeholder="e.g. 9876543210"
-                maxlength="10" pattern="[6-9][0-9]{9}" autocomplete="tel" required
-                style="
-                  font-family: Arial, sans-serif;
-                  font-size: 14px;
-                  color: #ffffff;
-                  background: rgba(255,255,255,0.10);
-                  border: 1px solid rgba(255,255,255,0.20);
-                  border-radius: 8px;
-                  padding: 10px 14px;
-                  outline: none;
-                  width: 100%;
-                  box-sizing: border-box;
-                "
-              />
-            </div>
-
-          </div>
-
-          <button type="submit" id="request-submit-btn" style="
-            width: 100%;
-            padding: 14px;
-            background: #fe121e;
-            color: #ffffff;
-            border: none;
-            border-radius: 10px;
-            font-family: Arial, sans-serif;
-            font-size: 15px;
-            font-weight: 700;
-            cursor: pointer;
-            letter-spacing: 0.5px;
-          ">🆘 Submit Urgent Request</button>
-
-          <div id="request-status" role="alert" aria-live="polite" style="margin-top: 14px;"></div>
-
-          <p style="
-            text-align: center;
-            font-family: Arial, sans-serif;
-            font-size: 12px;
-            color: rgba(255,255,255,0.4);
-            margin-top: 14px;
-          ">Typical response time: <strong style="color: #ffe066;">15–30 minutes</strong>. Emergency: call <strong style="color: #ff6b6b;">1910</strong>.</p>
-
-        </form>
         </div>
       </div>
+
+      <button class="scroll-down-btn" data-target="#contact" aria-label="Scroll to next section" title="Next section">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+        </svg>
+      </button>
+    </div>
   </section>
-  <footer id="contact" style="
-    background: linear-gradient(to bottom, #111827, #0b0f19);
-    border-top: 1px solid #1f2937;
-    padding: 64px 24px 24px;
-  " role="contentinfo">
-    
-    <div style="max-width: 1100px; margin: 0 auto;">
-      
-      <div style="text-align: center; margin-bottom: 48px;">
-        <span style="
-          display: inline-block;
-          color: #4ade80;
-          font-family: Arial, sans-serif;
-          font-weight: 600;
-          letter-spacing: 2px;
-          text-transform: uppercase;
-          font-size: 11px;
-          margin-bottom: 16px;
-          padding: 6px 16px;
-          background-color: rgba(20, 83, 45, 0.3);
-          border-radius: 9999px;
-          border: 1px solid rgba(21, 128, 61, 0.3);
-        ">
-          Get In Touch
-        </span>
-        <h2 style="font-family: Arial, sans-serif; font-weight: 800; font-size: clamp(28px, 5vw, 36px); color: #ffffff; margin: 0 0 12px;">Contact &amp; Support</h2>
-        <p style="font-family: Arial, sans-serif; color: #9ca3af; font-size: 14px; max-width: 512px; margin: 0 auto; line-height: 1.6;">
+
+  <!-- Contact -->
+  <footer id="contact" class="footer" role="contentinfo">
+    <div class="section-wrap section-wrap--wide">
+      <div class="section-header section-header--sm">
+        <span class="footer__badge">Get In Touch</span>
+        <h2 class="section-title">Contact &amp; Support</h2>
+        <p class="section-desc section-desc--sm">
           Reach out to the NSS Blood Donation Cell at Bharata Mata College for donor
           coordination, inquiries, or emergency requests.
         </p>
       </div>
 
-      <div style="
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-        gap: 32px;
-        margin-bottom: 48px;
-      ">
-        
-        <div style="background-color: rgba(31, 41, 55, 0.4); border: 1px solid rgba(55, 65, 81, 0.5); border-radius: 16px; padding: 24px; box-sizing: border-box;">
-          <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 20px;">
-            <span style="font-size: 24px;" aria-hidden="true">📞</span>
-            <h3 style="font-family: Arial, sans-serif; font-weight: 700; color: #ffffff; font-size: 16px; margin: 0;">Contact Numbers</h3>
+      <div class="contact-grid">
+        <div class="contact-card contact-card--default">
+          <div class="contact-card__header">
+            <span aria-hidden="true">📞</span>
+            <h3>Contact Numbers</h3>
           </div>
-          <ul style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 12px; font-family: Arial, sans-serif; font-size: 14px;">
+          <ul class="contact-list">
             <li>
-              <span style="color: #6b7280; font-size: 11px; text-transform: uppercase; letter-spacing: 1px; display: block; margin-bottom: 2px;">NSS Programme Officer</span>
-              <a href="tel:+919876543210" style="color: #ffffff; font-weight: 500; text-decoration: none; transition: color 0.2s;">+91 98765 43210</a>
+              <span class="contact-list__label">NSS Programme Officer</span>
+              <a href="tel:+919876543210">+91 98765 43210</a>
             </li>
             <li>
-              <span style="color: #6b7280; font-size: 11px; text-transform: uppercase; letter-spacing: 1px; display: block; margin-bottom: 2px;">Blood Cell Coordinator</span>
-              <a href="tel:+919876543211" style="color: #ffffff; font-weight: 500; text-decoration: none; transition: color 0.2s;">+91 98765 43211</a>
+              <span class="contact-list__label">Blood Cell Coordinator</span>
+              <a href="tel:+919876543211">+91 98765 43211</a>
             </li>
             <li>
-              <span style="color: #6b7280; font-size: 11px; text-transform: uppercase; letter-spacing: 1px; display: block; margin-bottom: 2px;">College Office</span>
-              <a href="tel:+914872345678" style="color: #ffffff; font-weight: 500; text-decoration: none; transition: color 0.2s;">+91 487 234 5678</a>
+              <span class="contact-list__label">College Office</span>
+              <a href="tel:+914872345678">+91 487 234 5678</a>
             </li>
-            <li style="padding-top: 12px; border-top: 1px solid #374151;">
-              <span style="color: #6b7280; font-size: 11px; text-transform: uppercase; letter-spacing: 1px; display: block; margin-bottom: 4px;">Admin Email</span>
-              <a href="mailto:nss.blood@bharatamatacollege.edu.in" style="color: #38bdf8; text-decoration: none; font-size: 12px; word-break: break-all;">
-                nss.blood@bharatamatacollege.edu.in
-              </a>
+            <li class="contact-list__divider">
+              <span class="contact-list__label">Admin Email</span>
+              <a href="mailto:nss.blood@bharatamatacollege.edu.in" class="link-email">nss.blood@bharatamatacollege.edu.in</a>
             </li>
           </ul>
         </div>
 
-        <div style="background-color: rgba(31, 41, 55, 0.4); border: 1px solid rgba(55, 65, 81, 0.5); border-radius: 16px; padding: 24px; box-sizing: border-box;">
-          <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 20px;">
-            <span style="font-size: 24px;" aria-hidden="true">🕐</span>
-            <h3 style="font-family: Arial, sans-serif; font-weight: 700; color: #ffffff; font-size: 16px; margin: 0;">Operational Hours</h3>
+        <div class="contact-card contact-card--default">
+          <div class="contact-card__header">
+            <span aria-hidden="true">🕐</span>
+            <h3>Operational Hours</h3>
           </div>
-          <ul style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 12px; font-family: Arial, sans-serif; font-size: 14px;">
-            <li style="display: flex; justify-content: space-between; align-items: center;">
-              <span style="color: #9ca3af;">Monday – Friday</span>
-              <span style="color: #ffffff; font-weight: 500;">9:00 AM – 4:00 PM</span>
+          <ul class="contact-list">
+            <li class="contact-list__row">
+              <span class="text-muted">Monday – Friday</span>
+              <span>9:00 AM – 4:00 PM</span>
             </li>
-            <li style="display: flex; justify-content: space-between; align-items: center;">
-              <span style="color: #9ca3af;">Saturday</span>
-              <span style="color: #ffffff; font-weight: 500;">9:00 AM – 1:00 PM</span>
+            <li class="contact-list__row">
+              <span class="text-muted">Saturday</span>
+              <span>9:00 AM – 1:00 PM</span>
             </li>
-            <li style="display: flex; justify-content: space-between; align-items: center;">
-              <span style="color: #9ca3af;">Sunday</span>
-              <span style="color: #6b7280; font-style: italic; font-weight: 500;">Closed</span>
+            <li class="contact-list__row">
+              <span class="text-muted">Sunday</span>
+              <span class="text-muted-italic">Closed</span>
             </li>
-            <li style="padding-top: 12px; border-top: 1px solid #374151;">
-              <div style="display: flex; align-items: center; gap: 8px; color: #4ade80; font-size: 12px; font-weight: 600;">
-                <span style="display: inline-block; w: 8px; height: 8px; background-color: #4ade80; border-radius: 50%;"></span>
+            <li class="contact-list__divider">
+              <div class="online-badge">
+                <span class="online-badge__dot"></span>
                 Online Portal: 24 × 7 Available
               </div>
-              <p style="color: #6b7280; font-size: 12px; margin: 4px 0 0;">
+              <p class="text-small-muted">
                 Submit requests anytime. Admin is notified by email instantly.
               </p>
             </li>
           </ul>
         </div>
 
-        <div style="background-color: rgba(76, 5, 25, 0.2); border: 1px solid rgba(220, 38, 38, 0.3); border-radius: 16px; padding: 24px; box-sizing: border-box;">
-          <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 20px;">
-            <span style="font-size: 24px;" aria-hidden="true">🚨</span>
-            <h3 style="font-family: Arial, sans-serif; font-weight: 700; color: #ffffff; font-size: 16px; margin: 0;">Emergency Requests</h3>
+        <div class="contact-card contact-card--emergency">
+          <div class="contact-card__header">
+            <span aria-hidden="true">🚨</span>
+            <h3>Emergency Requests</h3>
           </div>
-          <div style="display: flex; flex-direction: column; gap: 12px; font-family: Arial, sans-serif; font-size: 14px;">
-            <div style="display: flex; gap: 12px; align-items: flex-start;">
-              <span style="flex-shrink: 0; width: 20px; height: 20px; background-color: #dc2626; border-radius: 50%; display: flex; align-items: center; justify-center; color: #ffffff; font-size: 11px; font-weight: bold; text-align: center; justify-content: center;">1</span>
-              <span style="color: #d1d5db; line-height: 1.4;">Call National Blood Helpline: <a href="tel:1910" style="color: #ef4444; font-weight: bold; text-decoration: none;">1910</a></span>
+          <div class="emergency-steps">
+            <div class="emergency-step">
+              <span class="emergency-step__num">1</span>
+              <span>Call National Blood Helpline: <a href="tel:1910" class="link-danger">1910</a></span>
             </div>
-            <div style="display: flex; gap: 12px; align-items: flex-start;">
-              <span style="flex-shrink: 0; width: 20px; height: 20px; background-color: #dc2626; border-radius: 50%; display: flex; align-items: center; justify-center; color: #ffffff; font-size: 11px; font-weight: bold; text-align: center; justify-content: center;">2</span>
-              <span style="color: #d1d5db; line-height: 1.4;">Submit an urgent request via <a href="#donation" style="color: #ef4444; text-decoration: underline;">Web Donation Cell</a> above.</span>
+            <div class="emergency-step">
+              <span class="emergency-step__num">2</span>
+              <span>Submit an urgent request via <a href="#donation" class="link-danger link-underline">Web Donation Cell</a> above.</span>
             </div>
-            <div style="display: flex; gap: 12px; align-items: flex-start;">
-              <span style="flex-shrink: 0; width: 20px; height: 20px; background-color: #dc2626; border-radius: 50%; display: flex; align-items: center; justify-center; color: #ffffff; font-size: 11px; font-weight: bold; text-align: center; justify-content: center;">3</span>
-              <span style="color: #d1d5db; line-height: 1.4;">Call Coordinator directly at <a href="tel:+919876543211" style="color: #ef4444; font-weight: bold; text-decoration: none;">+91 98765 43211</a>.</span>
+            <div class="emergency-step">
+              <span class="emergency-step__num">3</span>
+              <span>Call Coordinator directly at <a href="tel:+919876543211" class="link-danger">+91 98765 43211</a>.</span>
             </div>
-            <div style="display: flex; gap: 12px; align-items: flex-start;">
-              <span style="flex-shrink: 0; width: 20px; height: 20px; background-color: #dc2626; border-radius: 50%; display: flex; align-items: center; justify-center; color: #ffffff; font-size: 11px; font-weight: bold; text-align: center; justify-content: center;">4</span>
-              <span style="color: #d1d5db; line-height: 1.4; word-break: break-all;">Email: <a href="mailto:emergency.blood@bharatamatacollege.edu.in" style="color: #ef4444; text-decoration: none; font-size: 12px;">emergency.blood@bmcol.in</a></span>
+            <div class="emergency-step">
+              <span class="emergency-step__num">4</span>
+              <span>Email: <a href="mailto:emergency.blood@bharatamatacollege.edu.in" class="link-danger link-small">emergency.blood@bmcol.in</a></span>
             </div>
           </div>
         </div>
-        
       </div>
 
-      <div style="background-color: rgba(31, 41, 55, 0.3); border: 1px solid rgba(55, 65, 81, 0.4); border-radius: 12px; padding: 20px; text-align: center; margin-bottom: 40px; font-family: Arial, sans-serif; font-size: 14px; line-height: 1.5;">
-        <p style="color: #9ca3af; margin: 0;">
-          <span style="color: #ffffff; font-weight: 600;">Bharata Mata College</span> ·
+      <div class="address-bar">
+        <p>
+          <strong>Bharata Mata College</strong> ·
           Thrikkakara, Ernakulam, Kerala – 682 021, India ·
-          <a href="mailto:info@bharatamatacollege.edu.in" style="color: #38bdf8; text-decoration: none;">info@bharatamatacollege.edu.in</a>
+          <a href="mailto:info@bharatamatacollege.edu.in">info@bharatamatacollege.edu.in</a>
         </p>
       </div>
-      
+
+      <button class="scroll-top-btn" aria-label="Scroll to top" title="Back to top">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M5 15l7-7 7 7" />
+        </svg>
+      </button>
     </div>
 
-    <div style="border-top: 1px solid rgba(31, 41, 55, 0.6); padding: 20px 16px 0; text-align: center; color: #4b5563; font-family: Arial, sans-serif; font-size: 12px; line-height: 1.5;">
-      <p style="margin: 0;">
-        © 2026 <span style="color: #ffffff; font-weight: 600;">Abhayam</span> — NSS Blood Donation Cell, Bharata Mata College.
-        Made with <span style="color: #ef4444; display: inline-block;">❤️</span> for humanity.
+    <div class="footer__copyright">
+      <p>
+        © 2026 <strong>Abhayam</strong> — NSS Blood Donation Cell, Bharata Mata College.
+        Made with <span class="heart">❤️</span> for humanity.
         Powered by Google Sheets &amp; Apps Script.
       </p>
     </div>
   </footer>
-  <script>
-    function showTab(tabId, clickedBtn) {
-      // Hide all panels
-      document.getElementById('donor-tab').style.display = 'none';
-      document.getElementById('request-tab').style.display = 'none';
-
-      // Reset both buttons
-      document.getElementById('tab-btn-donor').style.background = 'transparent';
-      document.getElementById('tab-btn-donor').style.color = 'rgba(255,255,255,0.7)';
-      document.getElementById('tab-btn-request').style.background = 'transparent';
-      document.getElementById('tab-btn-request').style.color = 'rgba(255,255,255,0.7)';
-
-      // Show selected panel
-      document.getElementById(tabId).style.display = 'block';
-
-      // Highlight clicked button
-      clickedBtn.style.background = '#fe121e';
-      clickedBtn.style.color = '#ffffff';
-    }
-  </script>
 
   <script src="apiService.js"></script>
   <script src="app.js"></script>
-
 </body>
 </html>
