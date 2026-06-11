@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -7,6 +8,7 @@
   <link rel="icon" href="Nss logo .png" type="image/png" />
   <link rel="stylesheet" href="style.css" />
 </head>
+
 <body>
 
   <!-- App bar -->
@@ -24,7 +26,8 @@
       </div>
     </div>
 
-    <button class="appbar__menu-btn" id="menu-btn" aria-label="Open navigation menu" aria-expanded="false" aria-controls="nav-drawer">
+    <button class="appbar__menu-btn" id="menu-btn" aria-label="Open navigation menu" aria-expanded="false"
+      aria-controls="nav-drawer">
       <span></span>
       <span></span>
       <span></span>
@@ -43,7 +46,7 @@
 
   <!-- Hero -->
   <header id="home" class="hero">
-    <img class="hero__bg" src="WhatsApp Image 2026-06-10 at 11.48.24 AM.jpeg" alt="" aria-hidden="true" />
+    <img class="hero__bg" src="nssgroupphoto.png" alt="" aria-hidden="true" />
     <div class="hero__overlay"></div>
     <img class="hero__watermark" src="Nss logo .png" alt="" aria-hidden="true" />
 
@@ -187,54 +190,106 @@
         </div>
         <div class="form-card">
           <div class="tab-list" role="tablist">
-          <button id="tab-btn-donor" class="tab-btn is-active" role="tab" aria-selected="true" aria-controls="donor-tab" data-tab="donor-tab">🧑‍⚕️ Donor Registration</button>
-          <button id="tab-btn-request" class="tab-btn" role="tab" aria-selected="false" aria-controls="request-tab" data-tab="request-tab">🆘 Blood Request</button>
-        </div>
-
-        <!-- Donor tab -->
-        <div id="donor-tab" class="tab-panel is-active" role="tabpanel">
-          <div class="alert-box alert-box--warning" role="note">
-            <span class="alert-box__icon">⚠️</span>
-            <p>
-              <strong>Eligibility:</strong>
-              Age 18–65 · Weight ≥ 45 kg · Good health · 56+ days since last donation.
-            </p>
+            <button id="tab-btn-donor" class="tab-btn is-active" role="tab" aria-selected="true"
+              aria-controls="donor-tab" data-tab="donor-tab">🧑‍⚕️ Donor Registration</button>
+            <button id="tab-btn-request" class="tab-btn" role="tab" aria-selected="false" aria-controls="request-tab"
+              data-tab="request-tab">🆘 Blood Request</button>
           </div>
 
-          <form id="donor-form" novalidate>
-            <div class="form-grid">
-              <div class="form-field">
-                <label for="donor-name">Full Name <span class="required">*</span></label>
-                <input type="text" id="donor-name" name="name" placeholder="e.g. Rahul Sharma" maxlength="100" autocomplete="name" required />
-              </div>
-              <div class="form-field">
-                <label for="donor-phone">Phone No <span class="required">*</span></label>
-                <input type="tel" id="donor-phone" name="phone" placeholder="e.g. 9876543210" maxlength="10" pattern="[6-9][0-9]{9}" autocomplete="tel" required />
-              </div>
+          <!-- Donor tab -->
+          <div id="donor-tab" class="tab-panel is-active" role="tabpanel">
+            <div class="alert-box alert-box--warning" role="note">
+              <span class="alert-box__icon">⚠️</span>
+              <p>
+                <strong>Eligibility:</strong>
+                Age 18–65 · Weight ≥ 45 kg · Good health · 56+ days since last donation.
+              </p>
             </div>
 
-            <div class="form-grid">
-              <div class="form-field">
-                <label for="donor-age">Age <span class="required">*</span></label>
-                <input type="number" id="donor-age" name="age" placeholder="18 – 65" min="18" max="65" required />
+            <form id="donor-form" novalidate>
+              <div class="form-grid">
+                <div class="form-field">
+                  <label for="donor-name">Full Name <span class="required">*</span></label>
+                  <input type="text" id="donor-name" name="name" placeholder="e.g. Rahul Sharma" maxlength="100"
+                    autocomplete="name" required />
+                </div>
+                <div class="form-field">
+                  <label for="donor-phone">Phone No <span class="required">*</span></label>
+                  <input type="tel" id="donor-phone" name="phone" placeholder="e.g. 9876543210" maxlength="10"
+                    pattern="[6-9][0-9]{9}" autocomplete="tel" required />
+                </div>
               </div>
-              <div class="form-field">
-                <label for="donor-gender">Gender <span class="required">*</span></label>
-                <select id="donor-gender" name="gender" required>
-                  <option value="" disabled selected>Select gender</option>
-                  <option value="Male">Male</option>
-                  <option value="Female">Female</option>
-                  <option value="Other">Other</option>
-                  <option value="Prefer not to say">Prefer not to say</option>
-                </select>
+
+              <div class="form-grid">
+                <div class="form-field">
+                  <label for="donor-age">Age <span class="required">*</span></label>
+                  <input type="number" id="donor-age" name="age" placeholder="18 – 65" min="18" max="65" required />
+                </div>
+                <div class="form-field">
+                  <label for="donor-gender">Gender <span class="required">*</span></label>
+                  <select id="donor-gender" name="gender" required>
+                    <option value="" disabled selected>Select gender</option>
+                    <option value="Male">Male</option>
+                    <option value="Female">Female</option>
+                    <option value="Other">Other</option>
+                    <option value="Prefer not to say">Prefer not to say</option>
+                  </select>
+                </div>
               </div>
+
+              <div class="form-grid">
+                <div class="form-field">
+                  <label for="donor-blood-group">Blood Group <span class="required">*</span></label>
+                  <select id="donor-blood-group" name="bloodGroup" required>
+                    <option value="" disabled selected>Select blood group</option>
+                    <option value="A+">A+ (A Positive)</option>
+                    <option value="A-">A− (A Negative)</option>
+                    <option value="B+">B+ (B Positive)</option>
+                    <option value="B-">B− (B Negative)</option>
+                    <option value="AB+">AB+ (AB Positive)</option>
+                    <option value="AB-">AB− (AB Negative)</option>
+                    <option value="O+">O+ (O Positive)</option>
+                    <option value="O-">O− (O Negative)</option>
+                  </select>
+                </div>
+                <div class="form-field">
+                  <label for="donor-address">Address <span class="required">*</span></label>
+                  <textarea id="donor-address" name="address" placeholder="Area / locality, District, Kerala" rows="3"
+                    maxlength="300" required></textarea>
+                </div>
+              </div>
+
+              <label class="checkbox-field" for="donor-eligible">
+                <input type="checkbox" id="donor-eligible" name="eligible" checked />
+                <span>
+                  <strong>I am currently eligible to donate blood</strong>
+                  <small>Uncheck if you have donated recently, are on medication, or are unwell.</small>
+                </span>
+              </label>
+
+              <button type="submit" id="donor-submit-btn" class="btn btn--primary btn--full">🩸 Register as
+                Donor</button>
+              <div id="donor-status" class="form-status" role="alert" aria-live="polite"></div>
+              <p class="form-note">Your data is stored securely and used only for blood donation coordination.</p>
+            </form>
+          </div>
+
+          <!-- Request tab -->
+          <div id="request-tab" class="tab-panel" role="tabpanel">
+            <div class="alert-box alert-box--urgent" role="note">
+              <span class="alert-box__icon">⚡</span>
+              <p>
+                <strong>Urgent?</strong>
+                The admin is instantly notified via email after submission.
+                For life-threatening emergencies, call <strong>1910</strong> immediately.
+              </p>
             </div>
 
-            <div class="form-grid">
-              <div class="form-field">
-                <label for="donor-blood-group">Blood Group <span class="required">*</span></label>
-                <select id="donor-blood-group" name="bloodGroup" required>
-                  <option value="" disabled selected>Select blood group</option>
+            <form id="request-form" novalidate>
+              <div class="form-field form-field--spaced">
+                <label for="request-blood-group">Required Blood Group <span class="required">*</span></label>
+                <select id="request-blood-group" name="bloodGroup" required>
+                  <option value="" disabled selected>Select required blood group</option>
                   <option value="A+">A+ (A Positive)</option>
                   <option value="A-">A− (A Negative)</option>
                   <option value="B+">B+ (B Positive)</option>
@@ -244,80 +299,38 @@
                   <option value="O+">O+ (O Positive)</option>
                   <option value="O-">O− (O Negative)</option>
                 </select>
+                <div class="blood-group-chips">
+                  <span class="blood-chip">A+</span>
+                  <span class="blood-chip">A−</span>
+                  <span class="blood-chip">B+</span>
+                  <span class="blood-chip">B−</span>
+                  <span class="blood-chip">AB+</span>
+                  <span class="blood-chip">AB−</span>
+                  <span class="blood-chip">O+</span>
+                  <span class="blood-chip">O−</span>
+                </div>
               </div>
-              <div class="form-field">
-                <label for="donor-address">Address <span class="required">*</span></label>
-                <textarea id="donor-address" name="address" placeholder="Area / locality, District, Kerala" rows="3" maxlength="300" required></textarea>
+
+              <div class="form-grid form-grid--spaced">
+                <div class="form-field">
+                  <label for="request-contact-name">Contact Person Name <span class="required">*</span></label>
+                  <input type="text" id="request-contact-name" name="contactName" placeholder="e.g. Priya Verma"
+                    maxlength="100" autocomplete="name" required />
+                </div>
+                <div class="form-field">
+                  <label for="request-contact-phone">Contact Phone No <span class="required">*</span></label>
+                  <input type="tel" id="request-contact-phone" name="contactPhone" placeholder="e.g. 9876543210"
+                    maxlength="10" pattern="[6-9][0-9]{9}" autocomplete="tel" required />
+                </div>
               </div>
-            </div>
 
-            <label class="checkbox-field" for="donor-eligible">
-              <input type="checkbox" id="donor-eligible" name="eligible" checked />
-              <span>
-                <strong>I am currently eligible to donate blood</strong>
-                <small>Uncheck if you have donated recently, are on medication, or are unwell.</small>
-              </span>
-            </label>
-
-            <button type="submit" id="donor-submit-btn" class="btn btn--primary btn--full">🩸 Register as Donor</button>
-            <div id="donor-status" class="form-status" role="alert" aria-live="polite"></div>
-            <p class="form-note">Your data is stored securely and used only for blood donation coordination.</p>
-          </form>
-        </div>
-
-        <!-- Request tab -->
-        <div id="request-tab" class="tab-panel" role="tabpanel">
-          <div class="alert-box alert-box--urgent" role="note">
-            <span class="alert-box__icon">⚡</span>
-            <p>
-              <strong>Urgent?</strong>
-              The admin is instantly notified via email after submission.
-              For life-threatening emergencies, call <strong>1910</strong> immediately.
-            </p>
+              <button type="submit" id="request-submit-btn" class="btn btn--primary btn--full">🆘 Submit Urgent
+                Request</button>
+              <div id="request-status" class="form-status" role="alert" aria-live="polite"></div>
+              <p class="form-note">Typical response time: <strong>15–30 minutes</strong>. Emergency: call <span
+                  class="emergency"><strong>1910</strong></span>.</p>
+            </form>
           </div>
-
-          <form id="request-form" novalidate>
-            <div class="form-field form-field--spaced">
-              <label for="request-blood-group">Required Blood Group <span class="required">*</span></label>
-              <select id="request-blood-group" name="bloodGroup" required>
-                <option value="" disabled selected>Select required blood group</option>
-                <option value="A+">A+ (A Positive)</option>
-                <option value="A-">A− (A Negative)</option>
-                <option value="B+">B+ (B Positive)</option>
-                <option value="B-">B− (B Negative)</option>
-                <option value="AB+">AB+ (AB Positive)</option>
-                <option value="AB-">AB− (AB Negative)</option>
-                <option value="O+">O+ (O Positive)</option>
-                <option value="O-">O− (O Negative)</option>
-              </select>
-              <div class="blood-group-chips">
-                <span class="blood-chip">A+</span>
-                <span class="blood-chip">A−</span>
-                <span class="blood-chip">B+</span>
-                <span class="blood-chip">B−</span>
-                <span class="blood-chip">AB+</span>
-                <span class="blood-chip">AB−</span>
-                <span class="blood-chip">O+</span>
-                <span class="blood-chip">O−</span>
-              </div>
-            </div>
-
-            <div class="form-grid form-grid--spaced">
-              <div class="form-field">
-                <label for="request-contact-name">Contact Person Name <span class="required">*</span></label>
-                <input type="text" id="request-contact-name" name="contactName" placeholder="e.g. Priya Verma" maxlength="100" autocomplete="name" required />
-              </div>
-              <div class="form-field">
-                <label for="request-contact-phone">Contact Phone No <span class="required">*</span></label>
-                <input type="tel" id="request-contact-phone" name="contactPhone" placeholder="e.g. 9876543210" maxlength="10" pattern="[6-9][0-9]{9}" autocomplete="tel" required />
-              </div>
-            </div>
-
-            <button type="submit" id="request-submit-btn" class="btn btn--primary btn--full">🆘 Submit Urgent Request</button>
-            <div id="request-status" class="form-status" role="alert" aria-live="polite"></div>
-            <p class="form-note">Typical response time: <strong>15–30 minutes</strong>. Emergency: call <span class="emergency"><strong>1910</strong></span>.</p>
-          </form>
-        </div>
         </div>
       </div>
 
@@ -334,7 +347,7 @@
     <div class="section-wrap section-wrap--wide">
       <div class="contact-box">
         <div class="contact-box__header">
-          
+
           <h2 class="section-title">Contact</h2>
           <p class="section-desc section-desc--sm">
             Reach out to the NSS Blood Donation Cell at Bharata Mata College for donor
@@ -362,7 +375,8 @@
             </li>
             <li class="contact-list__divider">
               <span class="contact-list__label">Admin Email</span>
-              <a href="mailto:nss.blood@bharatamatacollege.edu.in" class="link-email">nss.blood@bharatamatacollege.edu.in</a>
+              <a href="mailto:nss.blood@bharatamatacollege.edu.in"
+                class="link-email">nss.blood@bharatamatacollege.edu.in</a>
             </li>
           </ul>
         </div>
@@ -389,18 +403,26 @@
         Made with <span class="heart">❤️</span> for humanity.
       </p>
       <div style="padding: 2rem 0; display: flex; flex-direction: column; align-items: center; gap: 12px;">
-        <p style="font-size: 13px; color: #888; margin: 0; letter-spacing: 0.08em; text-transform: uppercase; font-weight: 500;">Built by</p>
+        <p
+          style="font-size: 13px; color: #888; margin: 0; letter-spacing: 0.08em; text-transform: uppercase; font-weight: 500;">
+          Built by</p>
         <div style="display: flex; align-items: center; gap: 12px;">
           <a href="https://www.linkedin.com/in/mathew-cs" target="_blank" rel="noopener noreferrer"
             style="display: flex; align-items: center; gap: 8px; text-decoration: none; padding: 8px 16px; border-radius: 12px; border: 1px solid #e0e0e0; font-size: 14px; font-weight: 500; color: inherit;">
             <!-- LinkedIn icon -->
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.32 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.79M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"/></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+              <path
+                d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.32 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.79M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z" />
+            </svg>
             mathew-seby
           </a>
           <span style="color: #aaa; font-size: 13px;">&amp;</span>
           <a href="https://www.linkedin.com/in/joelpunnen" target="_blank" rel="noopener noreferrer"
             style="display: flex; align-items: center; gap: 8px; text-decoration: none; padding: 8px 16px; border-radius: 12px; border: 1px solid #e0e0e0; font-size: 14px; font-weight: 500; color: inherit;">
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.32 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.79M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"/></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+              <path
+                d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.32 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.79M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z" />
+            </svg>
             joelpunnen
           </a>
         </div>
@@ -411,4 +433,5 @@
   <script src="apiService.js"></script>
   <script src="app.js"></script>
 </body>
+
 </html>
