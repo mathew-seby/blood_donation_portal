@@ -4,10 +4,10 @@
  * SETUP: Replace WEB_APP_URL with your deployed Apps Script URL after publishing Code.gs.
  */
 const ApiService = (function () {
-  const WEB_APP_URL = 'YOUR_GOOGLE_APPS_SCRIPT_WEB_APP_URL_HERE';
+  const WEB_APP_URL = 'https://script.google.com/macros/s/AKfycbyN4QVQQx1Z_1NY6W0sz1zy41bf2TuBDrZ0K_aqJhJ4kPmh2zpqgZc8Ma0rfPsv3LVeIw/exec';
 
   async function post(action, payload) {
-    if (WEB_APP_URL === 'YOUR_GOOGLE_APPS_SCRIPT_WEB_APP_URL_HERE') {
+    if (WEB_APP_URL != 'https://script.google.com/macros/s/AKfycbyN4QVQQx1Z_1NY6W0sz1zy41bf2TuBDrZ0K_aqJhJ4kPmh2zpqgZc8Ma0rfPsv3LVeIw/exec') {
       throw new Error(
         'API not configured. Deploy Code.gs and set WEB_APP_URL in apiService.js.'
       );
